@@ -12,9 +12,11 @@
 var http = require('http');
 var https = require('https');
 var url = require('url');
-var StringDecoder = require('string_decoder').StringDecoder
+var StringDecoder = require('string_decoder').StringDecoder;
 var config = require('./config');
 var fs = require('fs');
+var handlers = require('./lib/handlers');
+
 
 // Instantiate the HTTP server
 var httpServer = http.createServer(function(req, res){
@@ -105,21 +107,8 @@ var unifiedServer = function(req, res){
 };
 
 
-// Define the handlers
-var handlers = {};
-
-// Sample handler
-handlers.sample = function(data, callback){
-    // Callback a http status code, and a payload object
-    callback(406, {'name' : 'sample handler'})
-}
-
-// Bot found handler
-handlers.notFound = function(data, callback){
-    callback(404)
-}
-
 // Define a request router
 var router = {
-    'sample': handlers.sample
+    'ping': handlers.ping,
+    'users': handlers.users
 }

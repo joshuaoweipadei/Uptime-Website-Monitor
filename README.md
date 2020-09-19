@@ -2,7 +2,7 @@
 
 Uptime Website Monitor Application built with NodeJs. No frameworks, No dependencies, just plain NodeJs and its core in-built modules.
 
-###### Setting up the HTTPS SSL Certificate
+#### Setting up the HTTPS SSL Certificate
 
 Here are the steps in setting up the HTTPS SSL Certificate: In the root directory
 ```
